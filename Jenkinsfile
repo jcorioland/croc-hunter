@@ -67,28 +67,28 @@ volumes:[
       }
     }
 
-    // stage ('test deployment') {
+    stage ('test deployment') {
 
-    //   container('helm') {
+      container('helm') {
 
-    //     // run helm chart linter
-    //     pipeline.helmLint(chart_dir)
+        // run helm chart linter
+        pipeline.helmLint(chart_dir)
 
-    //     // run dry-run helm chart installation
-    //     pipeline.helmDeploy(
-    //       dry_run       : true,
-    //       name          : config.app.name,
-    //       namespace     : config.app.name,
-    //       version_tag   : image_tags_list.get(0),
-    //       chart_dir     : chart_dir,
-    //       replicas      : config.app.replicas,
-    //       cpu           : config.app.cpu,
-    //       memory        : config.app.memory,
-    //       hostname      : config.app.hostname
-    //     )
+        // run dry-run helm chart installation
+        pipeline.helmDeploy(
+          dry_run       : true,
+          name          : config.app.name,
+          namespace     : config.app.name,
+          version_tag   : image_tags_list.get(0),
+          chart_dir     : chart_dir,
+          replicas      : config.app.replicas,
+          cpu           : config.app.cpu,
+          memory        : config.app.memory,
+          hostname      : config.app.hostname
+        )
 
-    //   }
-    // }
+      }
+    }
 
     stage ('publish container') {
 
