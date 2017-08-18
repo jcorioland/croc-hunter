@@ -11,8 +11,6 @@ replicas: 3
 image: "jcorioland.azurecr.io/jcorioland/croc-hunter"
 imageTag: "latest"
 imagePullPolicy: "Always"
-imagePullSecrets:
-  - name: regsecret
 cpu: "10m"
 memory: "128Mi"
 # Ingress settings

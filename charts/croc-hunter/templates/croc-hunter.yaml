@@ -44,6 +44,8 @@ spec:
         - name: {{ template "fullname" . }}
           image: "{{.Values.image}}:{{.Values.imageTag}}"
           imagePullPolicy: "{{.Values.imagePullPolicy}}"
+          imagePullSecrets:
+            - name: regsecret
           ports:
           - name: http
             containerPort: {{.Values.containerPort}}
