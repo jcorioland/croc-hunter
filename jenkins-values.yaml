@@ -4,8 +4,8 @@
 
 Master:
   Memory: "512Mi"
-  HostName: jenkins.acs.az.estrado.io
-  ServiceType: ClusterIP
+  HostName: jenkins.acs.juliencorioland.net
+  ServiceType: LoadBalancer
   InstallPlugins:
       - kubernetes:0.11 
       - workflow-aggregator:2.5
@@ -27,9 +27,9 @@ Master:
       kubernetes.io/tls-acme: "true"
 
     TLS:
-      - secretName: jenkins.acs.az.estrado.io
+      - secretName: jenkins.acs.juliencorioland.net
         hosts:
-          - jenkins.acs.az.estrado.io
+          - jenkins.acs.juliencorioland.net
 
 Agent:
   Enabled: false
