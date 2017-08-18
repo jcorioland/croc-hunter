@@ -41,7 +41,7 @@ spec:
         component: "{{.Release.Name}}-{{.Values.component}}"
     spec:
       imagePullSecrets:
-        - name: regsecret
+        - name: jcorioland.azurecr.io
       containers:
         - name: {{ template "fullname" . }}
           image: "{{.Values.image}}:{{.Values.imageTag}}"
